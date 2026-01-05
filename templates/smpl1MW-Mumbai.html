@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1MW Data Center Build Cost - Mumbai MIDC Tier 3</title>
+    <div><a href= "https://midc.adamconsult.com/dc-template/index.html">Return to Home</a><div>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; background: #f5f7fa; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 30px; text-align: center; }
+        .header h1 { font-size: 2em; margin-bottom: 10px; }
+        .header p { font-size: 0.95em; opacity: 0.9; }
+        .header .subtitle { font-size: 0.9em; color: #fff; margin-top: 5px; padding: 8px 15px; background: rgba(255,255,255,0.2); border-radius: 4px; display: inline-block; }
+        .content { padding: 30px; }
+        .section-title { background: #667eea; color: white; padding: 12px 15px; margin-top: 25px; margin-bottom: 15px; border-radius: 4px; font-weight: 600; font-size: 1.05em; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 30px; font-size: 0.95em; }
+        thead { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        th { padding: 12px; text-align: left; font-weight: 600; border: 1px solid #764ba2; }
+        td { padding: 10px 12px; border: 1px solid #ddd; }
+        tbody tr:nth-child(odd) { background: #f9f9f9; }
+        tbody tr:nth-child(even) { background: #ffffff; }
+        tbody tr:hover { background: #e3f2fd; }
+        .total-row { background: #1e3c72 !important; color: white; font-weight: 600; }
+        .total-row td { border-color: #1e3c72; }
+        .subtotal-row { background: #e8eef7; color: #1e3c72; font-weight: 600; }
+        .highlight-row { background: #fff3cd; }
+        .number { text-align: right; font-weight: 500; }
+        .percentage { text-align: center; color: #28a745; font-weight: 600; }
+        .warning-text { color: #dc3545; font-weight: 600; }
+        .note { background: #fff3cd; padding: 15px; border-left: 4px solid #ffc107; margin-top: 20px; font-size: 0.9em; color: #333; border-radius: 4px; }
+        .alert-note { background: #f8d7da; padding: 15px; border-left: 4px solid #dc3545; margin-top: 20px; font-size: 0.9em; color: #721c24; border-radius: 4px; }
+        .info-note { background: #d1ecf1; padding: 15px; border-left: 4px solid #17a2b8; margin-top: 20px; font-size: 0.9em; color: #0c5460; border-radius: 4px; }
+        .calc-section { background: #f0f4ff; padding: 20px; border-radius: 6px; margin: 20px 0; }
+        .calc-input { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+        .input-group { display: flex; gap: 10px; align-items: center; }
+        .input-group input { padding: 8px 12px; border: 1px solid #ddd; border-radius: 4px; width: 150px; font-size: 0.95em; }
+        .input-group button { background: #28a745; color: white; border: none; padding: 8px 20px; border-radius: 4px; cursor: pointer; font-weight: 600; transition: 0.3s; }
+        .input-group button:hover { background: #20c997; }
+        .summary-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .summary-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 6px; text-align: center; }
+        .summary-card h3 { font-size: 0.9em; opacity: 0.9; margin-bottom: 10px; }
+        .summary-card .value { font-size: 1.8em; font-weight: 700; }
+        .summary-card.highlight { background: linear-gradient(135deg, #dc3545 0%, #c82333 100%); }
+        .comparison-table { background: #f8f9fa; padding: 15px; border-radius: 6px; margin: 20px 0; }
+        .comparison-table h4 { margin-bottom: 12px; color: #1e3c72; }
+        .comparison-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #ddd; }
+        .comparison-row strong { flex: 1; }
+        footer { background: #f8f9fa; padding: 20px; text-align: center; font-size: 0.85em; color: #666; border-top: 1px solid #ddd; }
+    </style>
+
+
+<!-- Your CSS links -->
+    <link rel="stylesheet" href="../../css/protect.css">  <!-- ⬅️ ../ for css folder -->
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>1 MW Data Center Build Cost</h1>
+            <div class="subtitle">🏢 Mumbai MIDC Tier 3 Infrastructure – Realistic Market Rate</div>
+            <p>ADAM Consult – Revised Capex Estimation with Mumbai-Specific Adjustments</p>
+        </div>
+
+        <div class="content">
+            <!-- SUMMARY CARDS -->
+            <div class="summary-box">
+                <div class="summary-card">
+                    <h3>Base Build Cost</h3>
+                    <div class="value">₹58.50</div>
+                    <small>CR (Generic)</small>
+                </div>
+                <div class="summary-card highlight">
+                    <h3>🔴 Realistic Mumbai Cost</h3>
+                    <div class="value">₹80.50</div>
+                    <small>CR (with additions)</small>
+                </div>
+                <div class="summary-card">
+                    <h3>Cost Increase</h3>
+                    <div class="value">+37.6%</div>
+                    <small>vs. base estimate</small>
+                </div>
+                <div class="summary-card">
+                    <h3>USD Equivalent</h3>
+                    <div class="value">$9.50</div>
+                    <small>MN USD/MW</small>
+                </div>
+            </div>
+
+            <!-- ALERT: KEY DIFFERENCES -->
+            <div class="alert-note">
+                <strong>⚠️ CRITICAL: Why Mumbai Cost is Higher</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>Raised Floor ₹2 CR (proper ₹10K/SFT thermal floor)</li>
+                    <li><strong>Power Substation:</strong> ₹2 CR → ₹4 CR (MSEDCL transmission upgrades expensive)</li>
+                    <li><strong>New Additions:</strong> ₹14 CR for environmental, IT, utilities, contingency</li>
+                    <li><strong>No Contingency Buffer:</strong> Original missing 10-15% risk reserve</li>
+                </ul>
+            </div>
+
+            <!-- SECTION 1: Component Share (ORIGINAL) -->
+            <div class="section-title">Section 1: % Share of Components – Non IT (Base Estimate)</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th class="percentage">% Share</th>
+                        <th class="number">Amount (INR/CR)</th>
+                    </tr>
+                </thead>
+                <tbody id="componentTableBody">
+                </tbody>
+            </table>
+
+            <!-- SECTION 2: BASE CAPEX -->
+            <div class="section-title">Section 2: Base Capex Breakdown (Original ₹58.50 CR)</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 5%">S.No</th>
+                        <th>Category</th>
+                        <th class="percentage">% of Build</th>
+                        <th class="number">Amount (INR/CR)</th>
+                    </tr>
+                </thead>
+                <tbody id="capexTableBody">
+                </tbody>
+            </table>
+
+            <!-- SECTION 3: MUMBAI-SPECIFIC ADDITIONS -->
+            <div class="section-title">Section 3: Mumbai-Specific Additions (₹22 CR)</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 5%">S.No</th>
+                        <th>Item Description</th>
+                        <th class="percentage">Category</th>
+                        <th class="number">Amount (INR/CR)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="highlight-row">
+                        <td colspan="4"><strong>A. ORIGINAL ESTIMATES</strong></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Raised Floor Proper thermal insulation & distribution</td>
+                        <td>Civil</td>
+                        <td class="number warning-text">+₹1.00</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Power Substation Upgrade (₹2→₹4 CR) – MSEDCL transformer & connection upgrades</td>
+                        <td>Electrical</td>
+                        <td class="number warning-text">+₹2.00</td>
+                    </tr>
+                    <tr class="subtotal-row">
+                        <td colspan="2"><strong>Subtotal</strong></td>
+                        <td class="percentage"><strong>3 CR</strong></td>
+                        <td class="number"><strong>₹3.00</strong></td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td colspan="4"><strong>B. MUMBAI-SPECIFIC NEW ADDITIONS</strong></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Land Lease/Lease Premium – MIDC annual charges (1 year @ ₹20-30 lakhs/year)</td>
+                        <td>Land</td>
+                        <td class="number">₹0.50</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Utility Connections – MSEDCL, BMC, water meter, sewer (connection charges)</td>
+                        <td>Infrastructure</td>
+                        <td class="number">₹0.75</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>EIA & Environmental Clearance – Phase 1 ESA, water discharge permits</td>
+                        <td>Compliance</td>
+                        <td class="number">₹0.50</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Structural & Foundation Reinforcement – Seismic bracing, soil strengthening</td>
+                        <td>Civil</td>
+                        <td class="number">₹1.50</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>IT Infrastructure & Structured Cabling (Tier 3 rated)</td>
+                        <td>IT</td>
+                        <td class="number">₹1.50</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Redundant Fiber Connectivity – Diversity + backup provider links</td>
+                        <td>Connectivity</td>
+                        <td class="number">₹0.50</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Testing & Tier 3 Certification (TIA-942, Uptime Institute Level 3)</td>
+                        <td>Compliance</td>
+                        <td class="number">₹0.50</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>MIDC Statutory Approvals (Building permit, fire NOC, structural cert, shop act)</td>
+                        <td>Compliance</td>
+                        <td class="number">₹0.75</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Water Recycling System (Mandatory for cooling >5 MW, but good practice for 1 MW)</td>
+                        <td>Infrastructure</td>
+                        <td class="number">₹0.50</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>Contingency Buffer (12% of base cost for overruns & surprises)</td>
+                        <td>Reserve</td>
+                        <td class="number">₹7.00</td>
+                    </tr>
+                    <tr class="subtotal-row">
+                        <td colspan="2"><strong>Subtotal New Additions</strong></td>
+                        <td class="percentage"><strong>10 items</strong></td>
+                        <td class="number"><strong>₹14.95</strong></td>
+                    </tr>
+                    <tr class="total-row">
+                        <td colspan="2"><strong>TOTAL ADDITIONS</strong></td>
+                        <td class="percentage"><strong>13 items</strong></td>
+                        <td class="number"><strong>₹17.95</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- SECTION 4: FINAL REALISTIC MUMBAI COST -->
+            <div class="section-title">Section 4: Final Realistic 1MW DC Cost Estimate – Mumbai MIDC</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 30%">Cost Component</th>
+                        <th class="percentage">Category</th>
+                        <th class="number">Amount (INR/CR)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Base Build Cost (Original)</strong></td>
+                        <td class="percentage">Baseline</td>
+                        <td class="number">₹58.50</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Additions</strong></td>
+                        <td class="percentage">Mumbai-Specific</td>
+                        <td class="number">+₹17.95</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td><strong>REALISTIC TOTAL (1 MW Tier 3)</strong></td>
+                        <td class="percentage"><strong>MUMBAI MIDC</strong></td>
+                        <td class="number"><strong>₹76.45 CR</strong></td>
+                    </tr>
+                    <tr style="background: #e8f5e9;">
+                        <td><strong>USD Equivalent</strong></td>
+                        <td class="percentage">@INR 8.5/USD</td>
+                        <td class="number"><strong>$9.0 MN USD</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cost Increase vs Original</strong></td>
+                        <td class="percentage"><strong>+30.7%</strong></td>
+                        <td class="number"><strong>+₹17.95 CR</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- SECTION 5: COST BREAKDOWN PIE -->
+            <div class="section-title">Section 5: Unit Cost Breakdown (Supporting Details)</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 5%">S.No</th>
+                        <th>Component Description</th>
+                        <th class="percentage">% of Build</th>
+                        <th class="number">Capex (INR/CR)</th>
+                    </tr>
+                </thead>
+                <tbody id="unitCostTableBody">
+                </tbody>
+            </table>
+
+            <!-- CALCULATOR -->
+            <div class="calc-section">
+                <h3 style="margin-bottom: 15px;">💰 Capex Calculator – Scale to Any MW (Mumbai Rates)</h3>
+                <div class="calc-input">
+                    <div class="input-group">
+                        <label for="mwInput" style="font-weight: 600;">Enter DC Capacity (MW):</label>
+                        <input type="number" id="mwInput" value="1" min="0.1" step="0.1">
+                    </div>
+                    <button onclick="calculateScaling()">Calculate Scaled Cost</button>
+                </div>
+                <div id="scalingResult" style="margin-top: 15px; display: none;">
+                    <strong>Scaled Cost for <span id="scaledMW">1</span> MW DC (Mumbai):</strong>
+                    <div style="font-size: 1.3em; color: #28a745; margin-top: 10px;">
+                        <strong id="scaledCost">76.45 INR/CR</strong> 
+                        (<span id="scaledUSD">$9.0 MN USD</span>)
+                    </div>
+                    <p style="margin-top: 10px; font-size: 0.85em; color: #666;">
+                        <em>Note: Scaling assumes linear growth. Large builds (5+ MW) may enjoy 5-10% economy of scale.</em>
+                    </p>
+                </div>
+            </div>
+
+            <!-- COMPARISON TABLE -->
+            <div class="comparison-table">
+                <h4>📊 Cost Comparison: Original vs Mumbai Realistic</h4>
+                <div class="comparison-row">
+                    <strong>Original Generic Estimate:</strong>
+                    <span style="text-align: right;">₹58.50 CR / $6.50 MN USD</span>
+                </div>
+                <div class="comparison-row" style="color: #dc3545;">
+                    <strong>Mumbai Realistic Estimate:</strong>
+                    <span style="text-align: right; font-weight: 600;">₹76.45 CR / $9.00 MN USD</span>
+                </div>
+                <div class="comparison-row" style="color: #28a745; background: #f0f9f0; padding: 10px; margin-top: 8px; border-radius: 4px;">
+                    <strong>Difference (Cost Premium):</strong>
+                    <span style="text-align: right; font-weight: 600;">+₹17.95 CR (+30.7%)</span>
+                </div>
+            </div>
+
+            <!-- KEY NOTES -->
+            <div class="note">
+                <strong>📌 Key Assumptions (Mumbai-Specific):</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Build cost is <strong>per MW IT Load</strong> (Tier 3 / N+N redundancy)</li>
+                    <li><strong>Raised Floor:</strong> ₹10,000/SFT thermal insulation (₹1000/SFT)</li>
+                    <li><strong>Power Substation:</strong> ₹4 CR/MW for MSEDCL transformer upgrades (realistic for Mumbai)</li>
+                    <li><strong>MIDC Location:</strong> Assumes Taloja or Ambazari MIDC zones</li>
+                    <li><strong>Approval Timeline:</strong> 6-8 months (MIDC clearance included in cost)</li>
+                    <li><strong>Seismic Compliance:</strong> Zone II earthquake resistance (mandatory for Mumbai)</li>
+                    <li><strong>Contingency:</strong> 12% buffer for overruns (essential for MIDC projects)</li>
+                    <li><strong>Labor Costs:</strong> 5-10% premium vs national average (Mumbai metro area)</li>
+                    <li><strong>Material Costs:</strong> National rates apply (no significant regional difference)</li>
+                </ul>
+            </div>
+
+            <div class="alert-note">
+                <strong>🚨 EXCLUDED FROM THIS ESTIMATE:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>Land Acquisition Cost:</strong> Only lease premium included (₹0.50 CR). Full land purchase = ₹3-8 CR (separate budget)</li>
+                    <li><strong>IT Equipment:</strong> Servers, switches, storage, networking gear = separate budget (₹20-30 CR for 1 MW deployment)</li>
+                    <li><strong>Taxes & GST:</strong> 18% GST on construction = additional ₹13.8 CR (included in some quotes, excluded here)</li>
+                    <li><strong>Finance Cost:</strong> Interest on 18-24 month construction period</li>
+                    <li><strong>Customer Setup & Customization:</strong> Facility-specific requirements (per customer)</li>
+                </ul>
+            </div>
+
+            <div class="info-note">
+                <strong>ℹ️ Mumbai Market Context (Q1 2026):</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>MSEDCL industrial tariff: ₹7.5-8.5/kWh (varies by MIDC zone)</li>
+                    <li>MIDC lease rates: ₹250-400/SFT/year (industrial land)</li>
+                    <li>Approval timeline: 4-8 weeks (DG), 4-6 weeks (Fire/PCB), 2-3 months (MIDC)</li>
+                    <li>Skilled labor availability: High (MIDC ecosystem mature)</li>
+                    <li>Logistics/Ports: Close proximity to JNPT reduces equipment lead time</li>
+                    <li>Vendor ecosystem: Competitive pricing for electrical & cooling equipment</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 ADAM Consult - Data Center Infrastructure Cost Estimation</p>
+            <p style="margin-top: 10px; opacity: 0.8;">Disclaimer: Costs are indicative and based on market rates as of Jan 2026. Actual costs may vary ±10-15% based on site conditions, vendor negotiations, procurement timing, and currency fluctuations. MIDC-specific factors (location, accessibility, power availability) will impact final cost.</p>
+        </footer>
+    </div>
+
+    <script>
+        const baseBuildCost = 58.50; // INR/CR original
+        const mumbaiRealisticCost = 76.45; // INR/CR 
+        const usdPerMWBase = 6.5; // Million USD (original)
+        const usdPerMWMumbai = 9.0; // Million USD (realistic)
+
+        // Component Share Data (ORIGINAL)
+        const componentData = [
+            { name: 'Civil', percentage: 16.24 },
+            { name: 'Electrical', percentage: 22.55 },
+            { name: 'Passive Cabling (Cat-A)', percentage: 7.53 },
+            { name: 'Diesel Generator (DG)', percentage: 16.09 },
+            { name: 'UPS', percentage: 10.50 },
+            { name: 'Precision Air Cooling (PAC)', percentage: 10.24 },
+            { name: 'Computer Room AC (CAC)', percentage: 1.93 },
+            { name: 'Fire Alarm & Suppression', percentage: 5.53 },
+            { name: 'VESDA Detection', percentage: 1.15 },
+            { name: 'Access Control', percentage: 2.83 },
+            { name: 'CCTV', percentage: 1.34 },
+            { name: 'Building Management System (BMS)', percentage: 2.85 },
+            { name: 'WLDS (Water Leak Detection)', percentage: 0.19 },
+            { name: 'Rodent Repellant', percentage: 0.29 },
+            { name: 'Public Address System', percentage: 0.73 }
+        ];
+
+        // Base Capex Breakdown
+        const capexData = [
+            { num: 1, category: 'Civil work', percentage: 20, amount: 11.70 },
+            { num: 2, category: 'Electrical (Low end: Panels, UPS, Trafos)', percentage: 40, amount: 23.40 },
+            { num: 3, category: 'DX-Based Cooling - PAC (N+25%)', percentage: 25, amount: 14.63 },
+            { num: 4, category: 'DC-BMS work', percentage: 5, amount: 2.93 },
+            { num: 5, category: 'Safety & Security', percentage: 5, amount: 2.93 },
+            { num: 6, category: 'Power Substation per MW', percentage: 'Additional', amount: 2.00 },
+            { num: 7, category: 'Approvals & Certifications', percentage: 'Additional', amount: 2.00 }
+        ];
+
+        // Unit Costs
+        const unitCostData = [
+            { num: 1, desc: 'Substation per MW × 4 (MSEDCL transformer upgrades)', percentage: '12.00%', amount: 4.00 },
+            { num: 2, desc: 'DG – 2250KVA (1.8MW) × 2 – Caterpillar/Cummins', percentage: '11.75%', amount: 4.00 },
+            { num: 3, desc: 'Transformer 2MVA × 2', percentage: '2.35%', amount: 0.80 },
+            { num: 4, desc: 'UPS 500 KVA × 4; 15-minute backup (VRLA Battery)', percentage: '10.28%', amount: 3.50 },
+            { num: 5, desc: 'Battery – Lithium 3.5V or LTO cell (Additional premium)', percentage: 'Premium', amount: '2.5-4' },
+            { num: 6, desc: 'Civil work (20,000 SFT × 3000/SFT base)', percentage: '17.62%', amount: 6.00 },
+            { num: 7, desc: 'Electrical low-end (15%) + commissioning', percentage: '2.94%', amount: 1.00 },
+            { num: 8, desc: 'IBMS (9 components; may increase 20% with SCADA)', percentage: '7.34%', amount: 2.50 },
+            { num: 9, desc: 'PAC (20 units, 25TR) – Server Hall + Utilities', percentage: '11.75%', amount: 4.00 },
+            { num: 10, desc: 'Power Cabling (HT + LT)', percentage: '2.94%', amount: 1.00 },
+            { num: 11, desc: 'LT Panel, DG Sync Panel', percentage: '5.87%', amount: 2.00 },
+            { num: 12, desc: '⚠️ Raised Floor (₹10K/SFT thermal, not ₹1K)', percentage: amount: '2.00 (was 1.00)' },
+            { num: 13, desc: 'Telco Room (Voice & Data) Cabling', percentage: '0.73%', amount: 0.25 },
+            { num: 14, desc: 'Statutory Approvals (DG, MIDC, Fire, Safety, PCB)', percentage: '0.73%', amount: 0.25 },
+            { num: 15, desc: 'Certifications & Compliances (ISO, TIA-92, Uptime Tier 3)', percentage: '4.41%', amount: 1.50 },
+            { num: 16, desc: 'CACs, Lighting, False Ceiling', percentage: '4.41%', amount: 1.50 },
+            { num: 17, desc: 'Incidentals & Logistics', percentage: '2.06%', amount: 0.70 }
+        ];
+
+        // Populate Component Table
+        function populateComponentTable() {
+            let html = '';
+            componentData.forEach(comp => {
+                const amount = (baseBuildCost * comp.percentage / 100).toFixed(2);
+                html += `<tr>
+                    <td>${comp.name}</td>
+                    <td class="percentage">${comp.percentage.toFixed(2)}%</td>
+                    <td class="number">₹${amount} CR</td>
+                </tr>`;
+            });
+            html += `<tr class="total-row">
+                <td><strong>Total</strong></td>
+                <td class="percentage"><strong>100.00%</strong></td>
+                <td class="number"><strong>₹${baseBuildCost.toFixed(2)} CR</strong></td>
+            </tr>`;
+            document.getElementById('componentTableBody').innerHTML = html;
+        }
+
+        // Populate Capex Table
+        function populateCapexTable() {
+            let html = '';
+            capexData.forEach(row => {
+                const pctText = typeof row.percentage === 'number' ? row.percentage + '%' : row.percentage;
+                html += `<tr>
+                    <td>${row.num}</td>
+                    <td>${row.category}</td>
+                    <td class="percentage">${pctText}</td>
+                    <td class="number">₹${row.amount.toFixed(2)} CR</td>
+                </tr>`;
+            });
+            html += `<tr class="total-row">
+                <td colspan="2"><strong>Total Base Capex (1 MW)</strong></td>
+                <td colspan="2" class="number"><strong>₹${baseBuildCost.toFixed(2)} CR</strong></td>
+            </tr>`;
+            document.getElementById('capexTableBody').innerHTML = html;
+        }
+
+        // Populate Unit Cost Table
+        function populateUnitCostTable() {
+            let html = '';
+            unitCostData.forEach(row => {
+                const amountText = typeof row.amount === 'number' ? '₹' + row.amount.toFixed(2) + ' CR' : row.amount + ' CR';
+                const highlightClass = row.num === 12 ? ' highlight-row' : '';
+                html += `<tr${highlightClass}>
+                    <td>${row.num}</td>
+                    <td>${row.desc}</td>
+                    <td class="percentage">${row.percentage}</td>
+                    <td class="number">${amountText}</td>
+                </tr>`;
+            });
+            document.getElementById('unitCostTableBody').innerHTML = html;
+        }
+
+        // Scale Cost Calculator
+        function calculateScaling() {
+            const mwInput = parseFloat(document.getElementById('mwInput').value) || 1;
+            const scaledCost = (mumbaiRealisticCost * mwInput).toFixed(2);
+            const scaledUSD = (usdPerMWMumbai * mwInput).toFixed(2);
+            
+            document.getElementById('scaledMW').innerText = mwInput;
+            document.getElementById('scaledCost').innerText = '₹' + scaledCost + ' CR';
+            document.getElementById('scaledUSD').innerText = '$' + scaledUSD + ' MN USD';
+            
+            document.getElementById('scalingResult').style.display = 'block';
+        }
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            populateComponentTable();
+            populateCapexTable();
+            populateUnitCostTable();
+        });
+    </script>
+
+
+  <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Load footer & protection script -->
+    <script>
+    fetch("../../footer.html")
+        .
+        .then(res => res.text())
+        .then(html
+ => {
+            document.getElementById("footer-placeholder").innerHTML = html;
+            const protect = document.createElement("
+("script");
+            protect.src = "../../js/imgTextProtect.js";
+            document.body.appendChild(protect);
+        })
+        .catch(err => {
+            console.error("Footer load failed:", err);
+            // Fallback footer
+            document.getElementById("footer-placeholder").innerHTML
+ = `
+                <footer style="background:#343a40;color:white;padding:20px;text-align:center;font-family:Roboto,sans-serif;">
+                    <div style="max-width:1200px;margin:0 auto;">
+                        <p>&copy; 2026 ADAM Consult - Data Center Infrastructure</p>
+                        <p style="opacity:0.8;margin-top:5px;font-size:0.85em;">MIDC | Mumbai | Maharashtra | India</p>
+                    </div>
+                </footer>
+            `;
+        });
+    </script>
+
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"337595a024a843abacd37624af94d943","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
